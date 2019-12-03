@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="EN-HK">
+<head>
+	<meta charset="utf-8">
+	<title>???</title>
+	<link href="Calendar.css" rel=Stylesheet type="text/css"/>
+</head>
+<body>
+	<div id="Calendar">
+		<div id="calendar_title">
+			<span id="pev">&lt;</span>
+			<span id="month"></span>
+			<span id="year"></span>
+			<span id="next">&gt;</span>
+		</div>
+		<div id="calendar_body">
+			<div id="weekday">
+			</div>
+			<div id="day">
+			</div>
+		</div>
+	</div>
+	<div id="Event">
+		<div id="EventList">
+			<form id="AddEvent">
+				<input type="Submit" value="+">
+				<input type="text" id="StartTime" value="">
+				<input type="text" id="FinishTime" value="">
+				<input type="text" id="EventName" value="">
+			</form>
+		</div>
+	</div>
+</body>
+<script src="../Function/Calendar.js"charset="utf-8"></script>
+<script src="../Function/Event.js"charset="utf-8"></script>
+</html>
