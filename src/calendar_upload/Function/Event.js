@@ -64,9 +64,26 @@ document.getElementById('AddEvent').onsubmit = function(e){
 	this.reset();
 }
 
+
+document.getElementById('DelEvent').onsubmit = function(e){
+	e.preventDefault();
+	var EN = this.EventName.value;
+	if(EN=="") {
+		alert("input no null");
+		return;
+	}
+	db.serialize(function(){
+		var stmt = db.prepare("DELETE FROM Calendar WHERE Date = ? and EventName = ? ");   //int set to 0
+		stmt.run(now_day,EN);
+		stmt.finalize();
+	});
+	Eventupdate(now_day);
+	this.reset();
+}
+
 function Workdone(id){
 	db.serialize(function(){
-		console.log(id);
+		//console.log(id);
 		db.run("UPDATE Calendar SET WorkDone='v' WHERE rowid=?",id-31);
 	});
 	document.getElementById(id).innerHTML = 'v';
